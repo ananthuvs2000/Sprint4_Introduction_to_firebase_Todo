@@ -73,9 +73,11 @@ class SignUp extends StatelessWidget {
             ElevatedButton(onPressed: ()async {
              if(_formKey.currentState!.validate()){
               await SignupRepo().createUser(_nameController.text, _emailController.text, _phoneController.text, _passController.text, context);
+              
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>Login(),));
              }
 
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Login(),));
+             
             }, child: Text("SIGN UP")),
           ],
         ),
